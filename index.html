@@ -15,7 +15,15 @@
         <section>
             <div class="myDishList" id="dishes"></div>
         </section>
-
+        <!-- Formulario para añadir nuevos platos -->
+        <form id="addDishForm">
+            <input type="text" id="dishName" placeholder="Nombre del Plato" required />
+            <input type="text" id="dishDescription" placeholder="Descripción" required />
+            <label>
+                <input type="checkbox" id="isFavorite"> Es mi comida favorita
+            </label>
+            <button type="submit">Agregar Plato</button>
+        </form>
     </body>
     <script src="js/eventos.js"></script>
 </html>

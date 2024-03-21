@@ -60,4 +60,54 @@ const platos = [
     });
     
     platoElement.innerHTML = contenido;
+
+    document.getElementById("addDishForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+    
+        // Recolectar información del formulario
+        const nombrePlato = document.getElementById("dishName").value;
+        const descripcionPlato = document.getElementById("dishDescription").value;
+        const esFavorito = document.getElementById("isFavorite").checked;
+    
+        // Agregar el nuevo plato al array y actualizar la lista
+        platos.push({
+            "nombre": nombrePlato,
+            "descripcion": descripcionPlato,
+            "esRico": true, // Asumimos que si lo agregas, es porque lo consideras rico
+            "esFavorito": esFavorito
+        });
+    
+        actualizarListaDePlatos();
+    
+        // Limpiar formulario
+        document.getElementById("addDishForm").reset();
+    });
+    
+    function actualizarListaDePlatos() {
+        let contenido = "";
+        platos.forEach(function(plato) {
+            let claseIcon = plato.esRico ? "rico" : "no-rico";
+            let clasesPlato = "plato" + (plato.esFavorito ? " plato-favorito" : "");
+            const template = `
+                <div class="${clasesPlato}">
+                    <div class="icon icon-${claseIcon}"></div>
+                    <div class="data">
+                        <h4>${plato.nombre}</h4>
+                        <p>${plato.descripcion}</p>
+                    </div>
+                    <div class="calificacion">
+                        ${plato.esRico ? "✔" : "✖"}
+                    </div>
+                </div>
+            `;
+            contenido += template;
+        });
+    
+        document.getElementById("dishes").innerHTML = contenido;
+    }
+    
+    // Inicializar lista de platos al cargar la página
+    actualizarListaDePlatos();
+
+
     

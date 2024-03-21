@@ -57,3 +57,20 @@
     font-weight: 700;
     padding-left: 20px;
 }
+#addDishForm {
+    margin-top: 20px;
+}
+
+#addDishForm input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+#addDishForm button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.plato-favorito {
+    border: solid 2px #FFD700; /* Dorado para favoritos */
+}
