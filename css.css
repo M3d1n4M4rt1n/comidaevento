@@ -1,0 +1,59 @@
+.plato {
+    display: flex;
+    align-items: center;
+    border: solid 1px #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #efefef;
+    box-shadow: 0px 3px 5px #c3c3c370;
+}
+.plato .icon {
+    width: 44px;
+    height: 44px;
+    position: relative;
+}
+.plato .icon-rico:before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 18px;
+    border-right: solid 2px #239126;
+    border-bottom: solid 2px #239126;
+    transform: rotate(45deg);
+    top: 10px;
+    left: 17px;
+}
+.plato .icon-no-rico:before,
+.plato .icon-no-rico:after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: #f75454;
+    transform: rotate(45deg);
+    top: 20px;
+    left: 10px;
+}
+.plato .icon-no-rico:after {
+    transform: rotate(-45deg);
+}
+.plato .data {
+    border-right: solid 1px #bdbdbd;
+    padding: 10px 0px;
+    padding-right: 20px;
+    min-width: 250px;
+}
+.plato .data h4 {
+    margin: 0px;
+    font-size: 20px;
+}
+.plato .data p {
+    margin: 0px;
+    font-size: 18px;
+    color: #939393;
+}
+.calificacion {
+    font-size: 32px;
+    font-weight: 700;
+    padding-left: 20px;
+}
